@@ -1,0 +1,6 @@
+flask
+requests
+cryptography
+beautifulsoup4
+python-telegram-bot
+python-dotenv
