@@ -1,0 +1,29 @@
+name: Lucky Jet Bot Workflow 🚀
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🛎️ Récupérer le dépôt GitHub
+      uses: actions/checkout@v3
+
+    - name: 🐍 Installer Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 📦 Mettre à jour pip + Installer les dépendances
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: 🚀 Lancer le bot Lucky Jet
+      run: |
+        python bot.py
